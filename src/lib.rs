@@ -1,13 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {
-            println!("Adding to waitlist")
-        }
-    }
-}
+mod front_of_house;
 
 pub use crate::front_of_house::hosting;
 
