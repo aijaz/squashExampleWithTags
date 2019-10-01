@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(unused_variables)]
 
 mod front_of_house {
     pub mod hosting {
@@ -9,23 +10,17 @@ mod front_of_house {
 fn serve_order() {}
 
 mod back_of_house {
-    pub struct Breakfast {
-        pub toast: String,
-        pub seasonal_fruit: String,
+    pub enum Appetizer {
+        Soup,
+        Salad,
     }
-}    
-
+}
 
 pub fn eat_at_restaurant() {
-    // Order a breakfast in the summer with Rye toast
-    let mut meal = back_of_house::Breakfast { toast: "wheat".to_string(), seasonal_fruit: "blueberries".to_string() } ;
-    println!("I'd like {} toast and {} please", meal.toast, meal.seasonal_fruit);
-    meal.toast = String::from("rye");
-    meal.seasonal_fruit = String::from("peaches");
-    println!("Actually, I'd like {} toast and {} please", meal.toast, meal.seasonal_fruit);
-
-}    
-
+    let order1 = back_of_house::Appetizer::Soup;
+    let order2 = back_of_house::Appetizer::Salad;
+}
+    
 
 #[cfg(test)]
 mod tests {
